@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   PURPLE & GREY — Enterprise design system ("Midnight Opal")
+   Brand: deep twilight violet + electric lime on a pearl-grey neutral ramp.
+   Primary = trust. Lime = energy. Glass = depth. Lexend = clarity.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Brand — Twilight violet */
+  --color-primary-50: #f5f2ff;
+  --color-primary-100: #ebe3ff;
+  --color-primary-200: #d8c8ff;
+  --color-primary-300: #b9a0f2;
+  --color-primary-400: #9772e6;
+  --color-primary-500: #6d3fd1;
+  --color-primary-600: #4c1d95;
+  --color-primary-700: #3b1678;
+  --color-primary-800: #2c115c;
+  --color-primary-900: #1e0b42;
+  --color-primary-950: #12062a;
+
+  /* Brand — Electric lime */
+  --color-lime-100: #f3fcd4;
+  --color-lime-200: #e5faaf;
+  --color-lime-300: #dcfb8c;
+  --color-lime-400: #c8f24e;
+  --color-lime-500: #a8d62f;
+  --color-lime-600: #88b31e;
+  --color-lime-700: #678a15;
+
+  /* Neutrals — pearl trued to violet */
+  --color-pearl-50: #f9f9fb;
+  --color-pearl-100: #f2f1f6;
+  --color-pearl-200: #e5e3ec;
+  --color-pearl-300: #cfccdc;
+  --color-pearl-400: #9e9ab6;
+  --color-pearl-500: #716c8e;
+  --color-pearl-600: #4f4a6b;
+  --color-pearl-700: #3a3552;
+  --color-pearl-800: #26223c;
+  --color-pearl-900: #16121f;
+  --color-pearl-950: #0d0b14;
+
+  /* Semantic */
+  --color-success-50: #e7f8f0;
+  --color-success-500: #12b76a;
+  --color-success-600: #04995a;
+  --color-warning-50: #fef6e7;
+  --color-warning-500: #f79009;
+  --color-warning-700: #b45309;
+  --color-danger-50: #fef3f2;
+  --color-danger-500: #f04438;
+  --color-danger-700: #b42318;
+  --color-info-50: #ecf5fe;
+  --color-info-500: #2e90fa;
+  --color-info-700: #175cd3;
+
+  /* Type */
+  --font-display: var(--font-lexend), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Depth */
+  --shadow-glow: 0 0 0 1px rgb(255 255 255 / 0.06), 0 8px 30px -6px rgb(18 6 42 / 0.45);
+  --shadow-soft: 0 1px 2px rgb(22 18 31 / 0.04), 0 12px 32px -12px rgb(22 18 31 / 0.14);
+  --shadow-lift: 0 2px 6px rgb(22 18 31 / 0.06), 0 24px 48px -20px rgb(76 29 149 / 0.35);
+
+  /* Radius */
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+}
+
+:root {
+  --bg-page: var(--color-pearl-50);
+  --bg-ink: var(--color-pearl-950);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-pearl-900);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-lime-400);
+  color: var(--color-primary-950);
+}
+
+h1, h2, h3, h4,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Gold-standard focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-lime-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Thin custom scrollbar for panels/tables */
+.scroll-slim::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-slim::-webkit-scrollbar-thumb { background: rgb(76 29 149 / 0.16); border-radius: 999px; }
+.scroll-slim::-webkit-scrollbar-thumb:hover { background: rgb(76 29 149 / 0.3); }
+.scroll-slim::-webkit-scrollbar-track { background: transparent; }
+
+/* Glass surfaces (light & dark variants) */
+.glass {
+  background: rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid rgb(255 255 255 / 0.65);
+  box-shadow: var(--shadow-soft);
+}
+.glass-dark {
+  background: rgb(22 14 44 / 0.55);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Aurora mesh used behind heroes */
+.aurora {
+  background:
+    radial-gradient(60rem 40rem at 12% 8%, rgb(76 29 149 / 0.9), transparent 60%),
+    radial-gradient(50rem 36rem at 92% 4%, rgb(109 63 209 / 0.5), transparent 55%),
+    radial-gradient(42rem 42rem at 60% 110%, rgb(200 242 78 / 0.14), transparent 60%),
+    var(--bg-ink);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
+}
+
+/* Infinite logo/portfolio list */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+.marquee::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, white 0%, transparent 12%, transparent 88%, white 100%);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
