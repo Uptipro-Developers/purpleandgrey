@@ -38,7 +38,7 @@ export function LandingNav() {
             Vendor portal
           </a>
           <a
-            href="/app"
+            // href="/app"
             className="cursor-pointer rounded-xl bg-lime-400 px-5 py-2.5 font-display text-sm font-medium text-primary-950 transition-colors duration-200 hover:bg-lime-300"
           >
             Open the app
@@ -71,7 +71,7 @@ export function LandingNav() {
               Vendor portal
             </a>
             <a
-              href="/app"
+              // href="/app"
               onClick={() => setOpen(false)}
               className="cursor-pointer mt-3 rounded-xl bg-lime-400 px-5 py-3 text-center font-display text-sm font-medium text-primary-950"
             >
@@ -123,11 +123,10 @@ export function PathSelector() {
               role="tab"
               aria-selected={selected}
               onClick={() => setActive(p.key)}
-              className={`cursor-pointer inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
-                selected
-                  ? "bg-lime-400 text-primary-950"
-                  : "border border-white/12 text-white/70 hover:border-white/25 hover:text-white"
-              }`}
+              className={`cursor-pointer inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${selected
+                ? "bg-lime-400 text-primary-950"
+                : "border border-white/12 text-white/70 hover:border-white/25 hover:text-white"
+                }`}
             >
               <Icon className="h-4 w-4" aria-hidden />
               {p.label}

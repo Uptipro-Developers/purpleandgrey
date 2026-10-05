@@ -25,7 +25,7 @@ export default function SurfaceSwitcher({
   const path = usePathname();
   return (
     <nav aria-label="Switch surface" className={`fixed z-[70] ${placements[placement]}`}>
-      <div className="flex items-center gap-1 rounded-full border border-primary-700/60 bg-primary-950/85 p-1.5 shadow-[0_8px_30px_-6px_rgba(18,6,42,0.6)] backdrop-blur-xl">
+      {/* <div className="flex items-center gap-1 rounded-full border border-primary-700/60 bg-primary-950/85 p-1.5 shadow-[0_8px_30px_-6px_rgba(18,6,42,0.6)] backdrop-blur-xl">
         {surfaces.map((s) => {
           const Icon = s.icon;
           const active = s.href === "/" ? path === "/" : path.startsWith(s.href);
@@ -42,7 +42,7 @@ export default function SurfaceSwitcher({
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </nav>
   );
 }
